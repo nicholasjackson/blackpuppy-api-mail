@@ -1,4 +1,4 @@
-blackpuppy-api-mail:
+blackpuppyapimail:
   image: blackpuppy-api-mail
   ports:
     - "8001:8001"
