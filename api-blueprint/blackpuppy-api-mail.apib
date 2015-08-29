@@ -1,40 +1,34 @@
 FORMAT: 1A
 HOST: https://api.example.com/v1
 
-# Hello API
+# Mail API
 
-A simple API demo
+Contact us mail API for the Black Puppy website
 
-# Group People
+# Group Mail
 
-This section describes about the People
+This section describes about the sending mail
 
-## Person [/people/{id}]
+## ContactUs [/mail/contactus]
 
-Represent particular Person
+Send a contact us mail
 
-+ Parameters
-
-    + id (required, string, `123`) ... The id of the Person.
-
-+ Model (application/json)
-
-    ```
-    {"name":"Gesang","birthdate":"01-09-1917"}
-    ```
-
-### Retrieve Person [GET]
-
-Return the information for the Person
+### Send Contact Us mail [POST]
 
 + Request (application/json)
-
-    + Headers
-
-        ```
-        Authorization: Basic AbcdeFg=
-        ```
+  ```
+    {
+      "name": "your name",
+      "email_address": "nic@hisaddress.com",
+      "message": "The message to send"
+    }
+  ```
 
 + Response 200 (application/json)
 
-    [Person][]
+  + Body
+    ```
+      {
+        "message":"ok"
+      }
+    ```

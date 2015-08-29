@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Hello API</title>
-		<meta name="description" content="A simple API demo">
+		<title>Mail API</title>
+		<meta name="description" content="Contact us mail API for the Black Puppy website">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 		<style>
 			tt, pre, code { font-family: Consolas, "Liberation Mono", Courier, monospace; background-color: transparent !important; }
@@ -20,8 +20,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="page-header">
-						<h1>Hello API</h1>
-						<h2><small><p>A simple API demo</p>
+						<h1>Mail API</h1>
+						<h2><small><p>Contact us mail API for the Black Puppy website</p>
 </small></h2>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 				<div class="col-md-12">
 <ul class="nav nav-pills" id="group-tab">
 	
-		<li><a href="#people" data-toggle="tab"><strong>People</strong></a></li>
+		<li><a href="#mail" data-toggle="tab"><strong>Mail</strong></a></li>
 	
 </ul>
 </div>
@@ -39,13 +39,13 @@
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="tab-content">
 
-	<div class="tab-pane" id="people">
+	<div class="tab-pane" id="mail">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h2 id="people">People</h2>
+				<h2 id="mail">Mail</h2>
 			</div>
 			<div class="panel-body">
-				<p class="lead"><small>This section describes about the People
+				<p class="lead"><small>This section describes about the sending mail
 
 </small></p>
 				
@@ -55,29 +55,13 @@
 	
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<span class="btn btn-primary">GET</span>
-			<code>/people/{id}</code>
+			<span class="btn btn-success">POST</span>
+			<code>/mail/contactus</code>
 		</div>
 		<div class="panel-body">
-			<p>Return the information for the Person</p>
-
+			
 		</div>
 		<ul class="list-group">
-			
-				<li class="list-group-item bg-default"><strong>Parameters</strong></li>
-				<li class="list-group-item">
-<dl class="dl-horizontal">
-	
-		<dt>id</dt>
-		<dd>
-		
-			<strong>(required)</strong>
-		
-		<code>string</code> The id of the Person.
-		</dd>
-	
-</dl>
-</li>
 			
 			
 	
@@ -89,8 +73,15 @@
 		</li>
 		<li class="list-group-item snippet">
 			
-				<code>&gt; Content-Type: application/json</code><br><code>&gt; Authorization: Basic AbcdeFg=</code><br>
+				<code>&gt; Content-Type: application/json</code><br>
 			
+			
+				<pre class="prettyprint">{
+  &#34;name&#34;: &#34;your name&#34;,
+  &#34;email_address&#34;: &#34;nic@hisaddress.com&#34;,
+  &#34;message&#34;: &#34;The message to send&#34;
+}
+</pre>
 			
 		</li>
 	
@@ -106,7 +97,12 @@
 				<code>&lt; Content-Type: application/json</code><br>
 			
 			
-				<pre class="prettyprint">{&#34;name&#34;:&#34;Gesang&#34;,&#34;birthdate&#34;:&#34;01-09-1917&#34;}
+				<pre class="prettyprint">```
+{
+&#34;message&#34;:&#34;ok&#34;
+}
+```
+
 </pre>
 			
 		</li>

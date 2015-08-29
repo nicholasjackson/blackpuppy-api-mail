@@ -1,3 +1,9 @@
 {
-  "Mykey": "{{key "my-key"}}"
+  "Mykey": "{{key "my-key"}}",
+  "SMTPServerSettings" : {
+		"Server": "{{key "blackpuppy/api/mail/smtpserver"}}",
+		"User":"njackson",
+		"Password":"Starwars74",
+		"UseAuth":false
+	},
 }

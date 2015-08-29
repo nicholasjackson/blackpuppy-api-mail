@@ -1,3 +1,9 @@
 {
-  "Mykey": "default value" 
+  "Mykey": "default value",
+  "SMTPServerSettings" : {
+		"Server": "mailcatcher:1025",
+		"User":"njackson",
+		"Password":"Starwars74",
+		"UseAuth":false
+	},
 }

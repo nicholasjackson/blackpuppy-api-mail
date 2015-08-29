@@ -14,4 +14,4 @@ To generate HTML documentation from the api-blueprint run:
 rake docs
 ```
 
-[http://htmlpreview.github.io/?https://github.com/nicholasjackson/go-microservice-template/blob/master/api-blueprint/microservice-template.html](http://htmlpreview.github.io/?https://github.com/nicholasjackson/go-microservice-template/blob/master/api-blueprint/microservice-template.html)
+[http://htmlpreview.github.io/?https://github.com/nicholasjackson/blackpuppy-api-mail/blob/master/api-blueprint/blackpuppy-api-mail.html](http://htmlpreview.github.io/?https://github.com/nicholasjackson/blackpuppy-api-mail/blob/master/api-blueprint/blackpuppy-api-mail)
