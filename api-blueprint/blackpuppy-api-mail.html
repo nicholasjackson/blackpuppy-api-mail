@@ -30,6 +30,8 @@
 				<div class="col-md-12">
 <ul class="nav nav-pills" id="group-tab">
 	
+		<li><a href="#healthcheck" data-toggle="tab"><strong>Healthcheck</strong></a></li>
+	
 		<li><a href="#mail" data-toggle="tab"><strong>Mail</strong></a></li>
 	
 </ul>
@@ -38,6 +40,64 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="tab-content">
+
+	<div class="tab-pane" id="healthcheck">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 id="healthcheck">Healthcheck</h2>
+			</div>
+			<div class="panel-body">
+				<p class="lead"><small>This section describes the features for checking the health of the service
+
+</small></p>
+				
+
+	
+	
+	
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<span class="btn btn-primary">GET</span>
+			<code>/mail/healthcheck</code>
+		</div>
+		<div class="panel-body">
+			
+		</div>
+		<ul class="list-group">
+			
+			
+	
+		
+	
+
+		
+	
+		<li class="list-group-item bg-default response">
+			<strong>Response <code>200</code></strong>
+			<a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+		</li>
+		<li class="list-group-item snippet">
+			
+				<code>&lt; Content-Type: application/json</code><br>
+			
+			
+				<pre class="prettyprint">{&#34;StatusMessage&#34;:&#34;Hello World&#34;}
+
+</pre>
+			
+		</li>
+	
+
+	
+
+		</ul>
+	</div>
+	
+
+
+			</div>
+		</div>
+	</div>
 
 	<div class="tab-pane" id="mail">
 		<div class="panel panel-default">
@@ -77,9 +137,9 @@
 			
 			
 				<pre class="prettyprint">{
-  &#34;name&#34;: &#34;your name&#34;,
-  &#34;email_address&#34;: &#34;nic@hisaddress.com&#34;,
-  &#34;message&#34;: &#34;The message to send&#34;
+&#34;name&#34;: &#34;your name&#34;,
+&#34;email_address&#34;: &#34;nic@hisaddress.com&#34;,
+&#34;message&#34;: &#34;The message to send&#34;
 }
 </pre>
 			
@@ -97,11 +157,9 @@
 				<code>&lt; Content-Type: application/json</code><br>
 			
 			
-				<pre class="prettyprint">```
-{
+				<pre class="prettyprint">{
 &#34;message&#34;:&#34;ok&#34;
 }
-```
 
 </pre>
 			
