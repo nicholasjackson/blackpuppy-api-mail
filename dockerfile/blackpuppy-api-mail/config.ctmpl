@@ -7,5 +7,5 @@
 		"User":"{{key "blackpuppy/api/mail/SMTPserversettings/user"}}",
 		"Password":"{{key "blackpuppy/api/mail/SMTPserversettings/password"}}",
 		"UseAuth":{{key "blackpuppy/api/mail/SMTPserversettings/auth"}}
-	},
+	}
 }
