@@ -1,6 +1,6 @@
 package business
 
-import (	
+import (
 	"net/smtp"
 	"github.com/nicholasjackson/blackpuppy-api-mail/email"
 	"github.com/nicholasjackson/blackpuppy-api-mail/global"
@@ -30,12 +30,24 @@ func SendEmail(name string, email string, body string, mail email.SendMail) erro
 		auth := smtp.PlainAuth(
 			"",
 			global.Config.SmtpServerSettings.User,
-			"password",
-			global.Config.SmtpServerSettings.Password)
+			global.Config.SmtpServerSettings.Password,
+			global.Config.SmtpServerSettings.Server)
 
-		return mail.SendMail(global.Config.SmtpServerSettings.Server, auth, "admin@demo.gs", emails, global.Config.ContactUsSubject, message)
+		return mail.SendMail(
+			global.Config.SmtpServerSettings.Server+":" +global.Config.SmtpServerSettings.Port,
+			auth,
+			"admin@demo.gs",
+			emails,
+			global.Config.ContactUsSubject,
+			message)
 	} else {
-		return mail.SendMail(global.Config.SmtpServerSettings.Server, nil, "admin@demo.gs", emails, global.Config.ContactUsSubject, message)
+		return mail.SendMail(
+			global.Config.SmtpServerSettings.Server+":" +global.Config.SmtpServerSettings.Port,
+			 nil,
+			"admin@demo.gs",
+			emails,
+			global.Config.ContactUsSubject,
+			message)
 	}
 
 }

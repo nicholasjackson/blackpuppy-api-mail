@@ -3,7 +3,8 @@
   "ContactUsSubject": "New contact from blackpuppy.info",
   "ContactUsTemplate": "/templates/email/contactus.mustache",
   "SMTPServerSettings" : {
-		"Server": "mailcatcher:1025",
+		"Server": "mailcatcher",
+    "Port": "1025",
 		"User":"username",
 		"Password":"password",
 		"UseAuth":false

@@ -8,6 +8,7 @@ import (
 
 type smtpServerSettings struct {
 	Server   string
+	Port     string
 	User     string
 	Password string
 	UseAuth  bool

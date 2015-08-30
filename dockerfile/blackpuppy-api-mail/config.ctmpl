@@ -4,6 +4,7 @@
   "ContactUsTemplate": "templates/email/contactus.mustache",
   "SMTPServerSettings" : {
 		"Server": "{{key "blackpuppy/api/mail/SMTPserversettings/server"}}",
+    "Port": "{{key "blackpuppy/api/mail/SMTPserversettings/port"}}",
 		"User":"{{key "blackpuppy/api/mail/SMTPserversettings/user"}}",
 		"Password":"{{key "blackpuppy/api/mail/SMTPserversettings/password"}}",
 		"UseAuth":{{key "blackpuppy/api/mail/SMTPserversettings/auth"}}
