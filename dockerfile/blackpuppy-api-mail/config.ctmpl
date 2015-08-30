@@ -2,7 +2,7 @@
   "ContactUsEmailTo": "{{key "blackpuppy/api/mail/contactemail"}}",
   "ContactUsEmailFrom": "{{key "blackpuppy/api/mail/fromemail"}}",
   "ContactUsSubject": "{{key "blackpuppy/api/mail/contactsubject"}}",
-  "ContactUsTemplate": "templates/email/contactus.mustache",
+  "ContactUsTemplate": "/templates/email/contactus.mustache",
   "SMTPServerSettings" : {
 		"Server": "{{key "blackpuppy/api/mail/SMTPserversettings/server"}}",
     "Port": "{{key "blackpuppy/api/mail/SMTPserversettings/port"}}",
