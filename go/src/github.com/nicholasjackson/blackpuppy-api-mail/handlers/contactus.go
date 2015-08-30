@@ -11,7 +11,7 @@ import (
 
 func ContactUsHandler(rw http.ResponseWriter, r *http.Request) {
 	response := business.ContactUsResponse{}
-	response.StatusMessage = "Invalid request object"
+	response.StatusMessage = "OK"
 
 	encoder := json.NewEncoder(rw)
 

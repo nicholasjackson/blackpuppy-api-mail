@@ -3,6 +3,8 @@ package email
 import (
 	"log"
 	"net/smtp"
+	"net/mail"
+	"github.com/jpoehls/gophermail"
 )
 
 type SmtpMail struct {
@@ -10,11 +12,17 @@ type SmtpMail struct {
 }
 
 func (m *SmtpMail) SendMail(addr string, a smtp.Auth, from string, to []string, subject string, msg []byte) error {
-	//body := m.BuildMessage(subject, msg)
 	log.Println("Sending Email:", subject)
 	log.Println("Email Server:", addr)
-	subject = "Subject: " + subject + "\n"
-	mime := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
-	messagebody := []byte(subject + mime + string(msg))
-	return smtp.SendMail(addr, a, from, to, messagebody)
+
+	toAddress := make([]mail.Address, 1)
+	toAddress[0].Address = to[0]
+
+	message := gophermail.Message{}
+	message.To = toAddress
+	message.SetFrom(from)
+	message.Subject = subject
+	message.HTMLBody = string(msg)
+
+	return gophermail.SendMail(addr, a, &message)
 }
