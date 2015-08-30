@@ -47,6 +47,8 @@ task :build_server => [:build] do
 
 	FileUtils.cp "./go/src/github.com/nicholasjackson/#{DOCKER_IMAGE_NAME}/server", "./dockerfile/#{DOCKER_IMAGE_NAME}/server"
 
+	FileUtils.cp_r "./templates", "./dockerfile/#{DOCKER_IMAGE_NAME}/templates"
+
 	Docker.options = {:read_timeout => 6200}
 	image = Docker::Image.build_from_dir "./dockerfile/#{DOCKER_IMAGE_NAME}", {:t => DOCKER_IMAGE_NAME}
 end
@@ -84,7 +86,7 @@ task :build_go_build_server do
 	image = Docker::Image.build_from_dir './dockerfile/gobuildserver', {:t => 'gobuildserver'}
 end
 
-task :e2e do
+task :e2e => [:build_server] do
 	feature = ARGV.last
 	if feature != "e2e"
 		feature = "--tags #{feature}"
@@ -98,7 +100,7 @@ task :e2e do
 
 	ENV['WEB_SERVER_URI'] = "http://#{host}:8001"
 	#ENV['MONGO_URI'] = "#{host}:27017"
-	#ENV['EMAIL_SERVER_URI'] = "http://#{host}:1080"
+	ENV['EMAIL_SERVER_URI'] = "http://#{host}:1080"
 
 	begin
 		pid = Process.fork do

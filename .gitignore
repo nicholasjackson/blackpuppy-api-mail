@@ -13,6 +13,7 @@ go/src/github.com/peterhellberg
 go/src/github.com/russross
 go/src/github.com/shurcooL
 go/src/github.com/subosito
+go/src/github.com/hoisie
 
 # binaries
 server
@@ -22,3 +23,4 @@ go/pkg
 # other
 serverlog.txt
 .DS_Store
+dockerfile/blackpuppy-api-mail/templates

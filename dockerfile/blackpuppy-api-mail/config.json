@@ -1,9 +1,11 @@
 {
-  "Mykey": "default value",
+  "ContactUsEmail": "jackson.nic@gmail.com",
+  "ContactUsSubject": "New contact from blackpuppy.info",
+  "ContactUsTemplate": "/templates/email/contactus.mustache",
   "SMTPServerSettings" : {
 		"Server": "mailcatcher:1025",
 		"User":"njackson",
 		"Password":"Starwars74",
 		"UseAuth":false
-	},
+	}
 }

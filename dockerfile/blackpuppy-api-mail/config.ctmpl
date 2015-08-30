@@ -1,5 +1,7 @@
 {
-  "Mykey": "{{key "my-key"}}",
+  "ContactUsEmail": "{{key "blackpuppy/api/mail/contactemail"}}",
+  "ContactUsSubject": "{{key "blackpuppy/api/mail/contactsubject"}}",
+  "ContactUsTemplate": "templates/email/contactus.mustache",
   "SMTPServerSettings" : {
 		"Server": "{{key "blackpuppy/api/mail/smtpserver"}}",
 		"User":"njackson",

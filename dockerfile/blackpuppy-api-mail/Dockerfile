@@ -2,10 +2,7 @@ FROM ubuntu:14.04
 
 EXPOSE 8001
 
-# Add the server
 RUN mkdir /blackpuppy-api-mail
-ADD ./server /blackpuppy-api-mail/server
-RUN chmod 755 /blackpuppy-api-mail/server
 
 # Install supervisor and consul-template
 RUN apt-get update
@@ -18,5 +15,12 @@ RUN mv consul-template_0.10.0_linux_386/consul-template /bin/consul-template
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD config.ctmpl /blackpuppy-api-mail/config.ctmpl
 ADD config.json /blackpuppy-api-mail/config.json
+
+# Add the server
+ADD ./server /blackpuppy-api-mail/server
+RUN chmod 755 /blackpuppy-api-mail/server
+
+# Add the templates
+ADD ./templates /blackpuppy-api-mail/templates
 
 CMD ["/usr/bin/supervisord", "-c","/etc/supervisor/conf.d/supervisord.conf"]
