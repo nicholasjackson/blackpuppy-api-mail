@@ -3,9 +3,9 @@
   "ContactUsSubject": "{{key "blackpuppy/api/mail/contactsubject"}}",
   "ContactUsTemplate": "templates/email/contactus.mustache",
   "SMTPServerSettings" : {
-		"Server": "{{key "blackpuppy/api/mail/smtpserver"}}",
-		"User":"njackson",
-		"Password":"Starwars74",
-		"UseAuth":false
+		"Server": "{{key "blackpuppy/api/mail/SMTPserversettings/smtpserver"}}",
+		"User":"{{key "blackpuppy/api/mail/SMTPserversettings/user"}}",
+		"Password":"{{key "blackpuppy/api/mail/SMTPserversettings/password"}}",
+		"UseAuth":{{key "blackpuppy/api/mail/SMTPserversettings/auth"}}
 	},
 }

@@ -4,8 +4,8 @@
   "ContactUsTemplate": "/templates/email/contactus.mustache",
   "SMTPServerSettings" : {
 		"Server": "mailcatcher:1025",
-		"User":"njackson",
-		"Password":"Starwars74",
+		"User":"username",
+		"Password":"password",
 		"UseAuth":false
 	}
 }
