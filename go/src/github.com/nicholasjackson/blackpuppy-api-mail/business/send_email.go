@@ -14,7 +14,7 @@ type ContactUsEmail struct {
 
 func SendEmail(name string, email string, body string, mail email.SendMail) error {
 	var emails []string = make([]string, 1)
-	emails[0] = global.Config.ContactUsEmail
+	emails[0] = global.Config.ContactUsEmailTo
 
 	emailData := ContactUsEmail{}
 	emailData.Name = name
@@ -36,7 +36,7 @@ func SendEmail(name string, email string, body string, mail email.SendMail) erro
 		return mail.SendMail(
 			global.Config.SmtpServerSettings.Server+":" +global.Config.SmtpServerSettings.Port,
 			auth,
-			"admin@demo.gs",
+			global.Config.ContactUsEmailFrom,
 			emails,
 			global.Config.ContactUsSubject,
 			message)
@@ -44,7 +44,7 @@ func SendEmail(name string, email string, body string, mail email.SendMail) erro
 		return mail.SendMail(
 			global.Config.SmtpServerSettings.Server+":" +global.Config.SmtpServerSettings.Port,
 			 nil,
-			"admin@demo.gs",
+			global.Config.ContactUsEmailFrom,
 			emails,
 			global.Config.ContactUsSubject,
 			message)

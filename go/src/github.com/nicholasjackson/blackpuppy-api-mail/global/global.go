@@ -15,7 +15,8 @@ type smtpServerSettings struct {
 }
 
 type ConfigStruct struct {
-	ContactUsEmail     string
+	ContactUsEmailTo     string
+	ContactUsEmailFrom     string
 	ContactUsSubject   string
 	ContactUsTemplate  string
 	SmtpServerSettings smtpServerSettings
@@ -35,5 +36,5 @@ func LoadConfig(config string, rootfolder string) {
 	err = decoder.Decode(&Config)
 	Config.RootFolder = rootfolder
 
-	log.Println("Email:", Config.ContactUsEmail)
+	log.Println("Email:", Config.ContactUsEmailTo)
 }

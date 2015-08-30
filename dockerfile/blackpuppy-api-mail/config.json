@@ -1,5 +1,6 @@
 {
-  "ContactUsEmail": "jackson.nic@gmail.com",
+  "ContactUsEmailTo": "jackson.nic@gmail.com",
+  "ContactUsEmailFrom": "noreply@blackpuppy.info",
   "ContactUsSubject": "New contact from blackpuppy.info",
   "ContactUsTemplate": "/templates/email/contactus.mustache",
   "SMTPServerSettings" : {
