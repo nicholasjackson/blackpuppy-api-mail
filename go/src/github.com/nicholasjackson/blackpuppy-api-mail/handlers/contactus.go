@@ -2,14 +2,17 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
-	"fmt"
+
 	"github.com/nicholasjackson/blackpuppy-api-mail/business"
 	"github.com/nicholasjackson/blackpuppy-api-mail/email"
 )
 
 func ContactUsHandler(rw http.ResponseWriter, r *http.Request) {
+	rw.Header().Set("Access-Control-Allow-Origin", "*")
+
 	response := business.ContactUsResponse{}
 	response.StatusMessage = "OK"
 
